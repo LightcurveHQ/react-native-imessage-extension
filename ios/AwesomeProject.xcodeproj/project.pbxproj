@@ -37,6 +37,11 @@
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		AC6FFC452223F2DD0074460D /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
+		AC6FFC462223F2DD0074460D /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
+		AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
+		AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		ACDBA61922203E0300E0A30E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDBA61822203E0300E0A30E /* Messages.framework */; };
 		ACDBA61C22203E0300E0A30E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */; };
 		ACDBA61F22203E0300E0A30E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */; };
@@ -370,6 +375,7 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		AC6FFC8E2223F49B0074460D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		ACDBA61722203E0300E0A30E /* AwesomeProjectMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AwesomeProjectMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDBA61822203E0300E0A30E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +444,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6FFC452223F2DD0074460D /* libRCTImage.a in Frameworks */,
+				AC6FFC462223F2DD0074460D /* libRCTNetwork.a in Frameworks */,
+				AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */,
+				AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */,
+				AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */,
 				ACDBA61922203E0300E0A30E /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +659,7 @@
 		ACDBA61A22203E0300E0A30E /* AwesomeProjectMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
+				AC6FFC8E2223F49B0074460D /* Bridging-Header.h */,
 				ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */,
 				ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */,
 				ACDBA62022203E0400E0A30E /* Assets.xcassets */,
@@ -749,6 +761,7 @@
 				ACDBA61322203E0300E0A30E /* Sources */,
 				ACDBA61422203E0300E0A30E /* Frameworks */,
 				ACDBA61522203E0300E0A30E /* Resources */,
+				AC6FFD26222430470074460D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1182,7 +1195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1197,6 +1210,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		AC6FFD26222430470074460D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh index.message.js\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1591,6 +1621,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "AwesomeProjectMessageExtension/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1620,6 +1651,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.AwesomeProject.AwesomeProjectMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AwesomeProjectMessageExtension/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

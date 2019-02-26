@@ -48,20 +48,6 @@
                ReferencedContainer = "container:AwesomeProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACDBA61622203E0300E0A30E"
-               BuildableName = "AwesomeProjectMessageExtension.appex"
-               BlueprintName = "AwesomeProjectMessageExtension"
-               ReferencedContainer = "container:AwesomeProject.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

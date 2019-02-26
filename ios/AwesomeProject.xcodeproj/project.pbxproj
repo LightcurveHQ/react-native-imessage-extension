@@ -42,6 +42,7 @@
 		AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		ACCFD4A22225382C00EE1EF7 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD4A12225382C00EE1EF7 /* Mappers.swift */; };
 		ACDBA61922203E0300E0A30E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDBA61822203E0300E0A30E /* Messages.framework */; };
 		ACDBA61C22203E0300E0A30E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */; };
 		ACDBA61F22203E0300E0A30E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */; };
@@ -376,6 +377,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		AC6FFC8E2223F49B0074460D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		ACCFD4A12225382C00EE1EF7 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
 		ACDBA61722203E0300E0A30E /* AwesomeProjectMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AwesomeProjectMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDBA61822203E0300E0A30E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 			children = (
 				AC6FFC8E2223F49B0074460D /* Bridging-Header.h */,
 				ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */,
+				ACCFD4A12225382C00EE1EF7 /* Mappers.swift */,
 				ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */,
 				ACDBA62022203E0400E0A30E /* Assets.xcassets */,
 				ACDBA62222203E0400E0A30E /* Info.plist */,
@@ -1269,6 +1272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACCFD4A22225382C00EE1EF7 /* Mappers.swift in Sources */,
 				ACDBA61C22203E0300E0A30E /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

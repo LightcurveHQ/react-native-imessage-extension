@@ -2,14 +2,21 @@
 //  MessagesViewController.swift
 //  AwesomeProjectMessageExtension
 //
-//  Created by Altay Aydemir on 22.02.19.
-//  Copyright © 2019 Facebook. All rights reserved.
-//
 
 import UIKit
 import Messages
 
+protocol MessagesViewControllerDelegate {
+  func didSelect(message: MSMessage, conversation: MSConversation)
+  func didReceive(message: MSMessage, conversation: MSConversation)
+  func didStartSending(message: MSMessage, conversation: MSConversation)
+  func didCancelSending(message: MSMessage, conversation: MSConversation)
+  func didTransition(to presentationStyle: MSMessagesAppPresentationStyle)
+}
+
 class MessagesViewController: MSMessagesAppViewController {
+  var delegate: MessagesViewControllerDelegate?
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -23,22 +30,24 @@ class MessagesViewController: MSMessagesAppViewController {
     self.presentReactNativeView()
   }
 
-  override func didResignActive(with conversation: MSConversation) {
+  override func didSelect(_ message: MSMessage, conversation: MSConversation) {
+    self.delegate?.didSelect(message: message, conversation: conversation)
   }
 
   override func didReceive(_ message: MSMessage, conversation: MSConversation) {
+    self.delegate?.didReceive(message: message, conversation: conversation)
   }
 
   override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
+    self.delegate?.didStartSending(message: message, conversation: conversation)
   }
 
   override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
-  }
-
-  override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+    self.delegate?.didCancelSending(message: message, conversation: conversation)
   }
 
   override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+    self.delegate?.didTransition(to: presentationStyle)
   }
 
   private func removeAllChildViewControllers() {

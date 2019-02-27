@@ -37,12 +37,15 @@
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		AC5FF85B2226985F00B448FD /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		AC6FFC452223F2DD0074460D /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		AC6FFC462223F2DD0074460D /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		ACCFD4A22225382C00EE1EF7 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD4A12225382C00EE1EF7 /* Mappers.swift */; };
+		ACCFD5152225981400EE1EF7 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD5142225981400EE1EF7 /* MessagesManager.swift */; };
+		ACCFD53C2225989100EE1EF7 /* MessagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD53B2225989100EE1EF7 /* MessagesManager.m */; };
 		ACDBA61922203E0300E0A30E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDBA61822203E0300E0A30E /* Messages.framework */; };
 		ACDBA61C22203E0300E0A30E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */; };
 		ACDBA61F22203E0300E0A30E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */; };
@@ -378,6 +381,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		AC6FFC8E2223F49B0074460D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		ACCFD4A12225382C00EE1EF7 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
+		ACCFD5142225981400EE1EF7 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
+		ACCFD53B2225989100EE1EF7 /* MessagesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesManager.m; sourceTree = "<group>"; };
 		ACDBA61722203E0300E0A30E /* AwesomeProjectMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AwesomeProjectMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDBA61822203E0300E0A30E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -446,12 +451,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC6FFC452223F2DD0074460D /* libRCTImage.a in Frameworks */,
-				AC6FFC462223F2DD0074460D /* libRCTNetwork.a in Frameworks */,
-				AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */,
-				AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */,
-				AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */,
+				AC5FF85B2226985F00B448FD /* JavaScriptCore.framework in Frameworks */,
 				ACDBA61922203E0300E0A30E /* Messages.framework in Frameworks */,
+				AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */,
+				AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */,
+				AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */,
+				AC6FFC462223F2DD0074460D /* libRCTNetwork.a in Frameworks */,
+				AC6FFC452223F2DD0074460D /* libRCTImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +669,8 @@
 			children = (
 				AC6FFC8E2223F49B0074460D /* Bridging-Header.h */,
 				ACDBA61B22203E0300E0A30E /* MessagesViewController.swift */,
+				ACCFD53B2225989100EE1EF7 /* MessagesManager.m */,
+				ACCFD5142225981400EE1EF7 /* MessagesManager.swift */,
 				ACCFD4A12225382C00EE1EF7 /* Mappers.swift */,
 				ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */,
 				ACDBA62022203E0400E0A30E /* Assets.xcassets */,
@@ -1274,6 +1282,8 @@
 			files = (
 				ACCFD4A22225382C00EE1EF7 /* Mappers.swift in Sources */,
 				ACDBA61C22203E0300E0A30E /* MessagesViewController.swift in Sources */,
+				ACCFD5152225981400EE1EF7 /* MessagesManager.swift in Sources */,
+				ACCFD53C2225989100EE1EF7 /* MessagesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,7 +1383,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject;
 				PRODUCT_NAME = AwesomeProject;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1394,7 +1404,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject;
 				PRODUCT_NAME = AwesomeProject;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1418,7 +1428,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.AwesomeProject-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1444,7 +1454,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.AwesomeProject-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1617,11 +1627,16 @@
 				DEVELOPMENT_TEAM = A8EF3BLY4Z;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AwesomeProjectMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.AwesomeProject.AwesomeProjectMessageExtension;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject.message;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1649,10 +1664,15 @@
 				DEVELOPMENT_TEAM = A8EF3BLY4Z;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AwesomeProjectMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.AwesomeProject.AwesomeProjectMessageExtension;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wtf.altay.AwesomeProject.message;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AwesomeProjectMessageExtension/Bridging-Header.h";

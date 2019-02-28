@@ -16,6 +16,8 @@ protocol MessagesViewControllerDelegate {
 
 class MessagesViewController: MSMessagesAppViewController {
   var delegate: MessagesViewControllerDelegate?
+  var ModuleInitializer: ModuleInitializer?
+  var bridge: RCTBridge?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,9 +63,14 @@ class MessagesViewController: MSMessagesAppViewController {
   private func presentReactNativeView() {
     self.removeAllChildViewControllers()
 
-    let bundleURL = RCTBundleURLProvider.sharedSettings()?.jsBundleURL(forBundleRoot: "index.message", fallbackResource: nil)
+    self.ModuleInitializer = ModuleInitializer(messagesVC: self)
+    self.bridge = RCTBridge(delegate: self.ModuleInitializer, launchOptions: nil)
 
-    let rootView = RCTRootView(bundleURL: bundleURL, moduleName: "AwesomeProjectMessageExtension", initialProperties: nil, launchOptions: nil)
+    let rootView = RCTRootView(
+      bridge: self.bridge,
+      moduleName: "AwesomeProjectMessageExtension",
+      initialProperties: nil
+    )
 
     let rootViewController = UIViewController()
     rootViewController.view = rootView
@@ -79,7 +86,7 @@ class MessagesViewController: MSMessagesAppViewController {
       rootViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
       rootViewController.view.topAnchor.constraint(equalTo: self.view.topAnchor),
       rootViewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-      ])
+    ])
 
     self.didMove(toParent: self)
   }

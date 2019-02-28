@@ -16,7 +16,7 @@ protocol MessagesViewControllerDelegate {
 
 class MessagesViewController: MSMessagesAppViewController {
   var delegate: MessagesViewControllerDelegate?
-  var ModuleInitializer: ModuleInitializer?
+  var moduleInitializer: ModuleInitializer?
   var bridge: RCTBridge?
 
   override func viewDidLoad() {
@@ -63,8 +63,8 @@ class MessagesViewController: MSMessagesAppViewController {
   private func presentReactNativeView() {
     self.removeAllChildViewControllers()
 
-    self.ModuleInitializer = ModuleInitializer(messagesVC: self)
-    self.bridge = RCTBridge(delegate: self.ModuleInitializer, launchOptions: nil)
+    self.moduleInitializer = ModuleInitializer(messagesVC: self)
+    self.bridge = RCTBridge(delegate: self.moduleInitializer, launchOptions: nil)
 
     let rootView = RCTRootView(
       bridge: self.bridge,

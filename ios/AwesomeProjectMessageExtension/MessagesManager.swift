@@ -50,12 +50,8 @@ class MessagesManager: NSObject {
   private func createLayout(_ layoutData: [String: String]) -> MSMessageLayout {
     let layout = MSMessageTemplateLayout()
 
-    if let imageName = layoutData["imageName"] {
-      if let image = UIImage(named: imageName) {
-        layout.image = image
-      } else {
-        layout.image = UIImage(named: "requested")
-      }
+    if let imageName = layoutData["imageName"], let image = UIImage(named: imageName) {
+      layout.image = image
     }
 
     layout.imageTitle = layoutData["imageTitle"]

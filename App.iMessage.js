@@ -10,6 +10,7 @@ import {
   NativeEventEmitter,
   Button,
 } from 'react-native';
+import DevMenu from './DevMenu';
 
 const { MessagesManager, MessagesEventEmitter } = NativeModules;
 const MessagesEvents = new NativeEventEmitter(MessagesEventEmitter);
@@ -50,6 +51,8 @@ export default class App extends Component {
   render() {
     return (
       <View>
+        {__DEV__ && <DevMenu />}
+
         <Text>
           Welcome to React Native iMessage Extension!
         </Text>

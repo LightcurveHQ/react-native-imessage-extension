@@ -83,4 +83,18 @@ class MessagesManager: NSObject {
       return resolve(Mappers.messageToObject(message: message, withParticipiantIdentifier: false))
     }
   }
+
+  @objc func openURL(_ urlString: String, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+    guard let url = URL(string: urlString) else {
+      return reject("ERROR", "Unable to construct url", nil)
+    }
+
+    self.messagesVC.extensionContext?.open(url, completionHandler: { (success) in
+      guard success == true else {
+        return reject("ERROR", "Unable to navigate to url", nil)
+      }
+
+      return resolve(url)
+    })
+  }
 }

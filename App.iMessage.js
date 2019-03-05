@@ -48,6 +48,12 @@ export default class App extends Component {
     .catch(error => console.log('An error occurred while composing the message: ', error))
   }
 
+  onOpenURL = () => {
+    MessagesManager.openURL('url://test')
+      .then(() => console.log('Successfully opened url!'))
+      .catch(error => console.log('An error occurred while opening the URL: ', error))
+  }
+
   render() {
     return (
       <View>
@@ -66,6 +72,11 @@ export default class App extends Component {
         <Button
           title="Compose Message"
           onPress={this.onComposeMessage}
+        />
+
+        <Button
+          title="Open URL"
+          onPress={this.onOpenURL}
         />
       </View>
     );

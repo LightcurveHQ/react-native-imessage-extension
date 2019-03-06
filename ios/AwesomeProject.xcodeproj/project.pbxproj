@@ -47,6 +47,7 @@
 		AC6FFC472223F2DD0074460D /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		AC6FFC482223F2DD0074460D /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		AC6FFC492223F2DD0074460D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		AC7E0BD5222FB95400CCD1FB /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC7E0BD4222FB95400CCD1FB /* LoadingView.xib */; };
 		ACCFD4A22225382C00EE1EF7 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD4A12225382C00EE1EF7 /* Mappers.swift */; };
 		ACCFD5152225981400EE1EF7 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD5142225981400EE1EF7 /* MessagesManager.swift */; };
 		ACCFD53C2225989100EE1EF7 /* MessagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCFD53B2225989100EE1EF7 /* MessagesManager.m */; };
@@ -387,6 +388,7 @@
 		AC29442C2226D26D009DAFD3 /* MessagesEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesEventEmitter.m; sourceTree = "<group>"; };
 		AC29445C2226D89D009DAFD3 /* ModuleInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInitializer.swift; sourceTree = "<group>"; };
 		AC6FFC8E2223F49B0074460D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		AC7E0BD4222FB95400CCD1FB /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		ACCFD4A12225382C00EE1EF7 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
 		ACCFD5142225981400EE1EF7 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		ACCFD53B2225989100EE1EF7 /* MessagesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesManager.m; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				ACDBA61D22203E0300E0A30E /* MainInterface.storyboard */,
 				ACDBA62022203E0400E0A30E /* Assets.xcassets */,
 				ACDBA62222203E0400E0A30E /* Info.plist */,
+				AC7E0BD4222FB95400CCD1FB /* LoadingView.xib */,
 			);
 			path = AwesomeProjectMessageExtension;
 			sourceTree = "<group>";
@@ -1197,6 +1200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7E0BD5222FB95400CCD1FB /* LoadingView.xib in Resources */,
 				ACDBA62122203E0400E0A30E /* Assets.xcassets in Resources */,
 				ACDBA61F22203E0300E0A30E /* MainInterface.storyboard in Resources */,
 			);

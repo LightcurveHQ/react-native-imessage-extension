@@ -72,6 +72,8 @@ class MessagesViewController: MSMessagesAppViewController {
       initialProperties: nil
     )
 
+    rootView?.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: nil, options: nil)![0] as? UIView
+
     let rootViewController = UIViewController()
     rootViewController.view = rootView
 

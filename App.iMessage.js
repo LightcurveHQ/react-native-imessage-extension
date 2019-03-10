@@ -26,6 +26,12 @@ export default class App extends Component {
 
     MessagesEvents
       .addListener('onPresentationStyleChanged', ({ presentationStyle }) => this.setState({ presentationStyle }));
+
+    this.performFakeAsyncTaskAndHideLoadingView()
+  }
+
+  performFakeAsyncTaskAndHideLoadingView = () => {
+    setTimeout(() => MessagesManager.hideLoadingView(), 3000);
   }
 
   onTogglePresentationStyle = () => {
@@ -54,6 +60,11 @@ export default class App extends Component {
       .catch(error => console.log('An error occurred while opening the URL: ', error))
   }
 
+  onShowLoadingView = () => {
+    MessagesManager.showLoadingView();
+    this.performFakeAsyncTaskAndHideLoadingView();
+  }
+
   render() {
     return (
       <View>
@@ -77,6 +88,11 @@ export default class App extends Component {
         <Button
           title="Open URL"
           onPress={this.onOpenURL}
+        />
+
+        <Button
+          title="Show Loading View (hides after 3 seconds)"
+          onPress={this.onShowLoadingView}
         />
       </View>
     );

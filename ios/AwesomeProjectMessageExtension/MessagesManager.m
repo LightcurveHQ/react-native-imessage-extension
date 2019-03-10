@@ -8,6 +8,9 @@
 
 @interface RCT_EXTERN_MODULE(MessagesManager, NSObject)
 
+RCT_EXTERN_METHOD(showLoadingView)
+RCT_EXTERN_METHOD(hideLoadingView)
+
 RCT_EXTERN_METHOD(getActiveConversation: (RCTResponseSenderBlock)callback)
 
 RCT_EXTERN_METHOD(composeMessage:

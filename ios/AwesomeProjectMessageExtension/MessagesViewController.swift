@@ -18,6 +18,7 @@ class MessagesViewController: MSMessagesAppViewController {
   var delegate: MessagesViewControllerDelegate?
   var moduleInitializer: ModuleInitializer?
   var bridge: RCTBridge?
+  var loadingView: UIView?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -72,8 +73,6 @@ class MessagesViewController: MSMessagesAppViewController {
       initialProperties: nil
     )
 
-    rootView?.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: nil, options: nil)![0] as? UIView
-
     let rootViewController = UIViewController()
     rootViewController.view = rootView
 
@@ -81,6 +80,10 @@ class MessagesViewController: MSMessagesAppViewController {
     rootViewController.view.frame = self.view.bounds
     rootViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
+    self.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: nil, options: nil)![0] as? UIView
+    self.loadingView?.bounds = self.view.bounds
+
+    self.view.addSubview(self.loadingView!)
     self.view.addSubview(rootViewController.view)
 
     NSLayoutConstraint.activate([

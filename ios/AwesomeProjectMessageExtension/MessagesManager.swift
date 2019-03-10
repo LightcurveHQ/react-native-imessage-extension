@@ -22,6 +22,18 @@ class MessagesManager: NSObject {
     self.messagesVC = messagesVC
   }
 
+  @objc func showLoadingScreen() {
+    DispatchQueue.main.async {
+      self.messagesVC.loadingView?.isHidden = false
+    }
+  }
+
+  @objc func hideLoadingScreen() {
+    DispatchQueue.main.async {
+      self.messagesVC.loadingView?.isHidden = true
+    }
+  }
+
   @objc func getPresentationStyle(_ callback: RCTResponseSenderBlock) {
     callback([Mappers.presentationStyleToString(style: self.messagesVC.presentationStyle)])
   }

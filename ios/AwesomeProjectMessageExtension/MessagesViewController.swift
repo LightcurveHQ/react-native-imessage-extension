@@ -63,7 +63,6 @@ class MessagesViewController: MSMessagesAppViewController {
 
   private func presentReactNativeView() {
     self.removeAllChildViewControllers()
-
     self.moduleInitializer = ModuleInitializer(messagesVC: self)
     self.bridge = RCTBridge(delegate: self.moduleInitializer, launchOptions: nil)
 
@@ -76,15 +75,15 @@ class MessagesViewController: MSMessagesAppViewController {
     let rootViewController = UIViewController()
     rootViewController.view = rootView
 
+    self.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: nil, options: nil)![0] as? UIView
+    self.loadingView?.bounds = self.view.bounds
+
     self.addChild(rootViewController)
     rootViewController.view.frame = self.view.bounds
     rootViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-    self.loadingView = Bundle.main.loadNibNamed("LoadingView", owner: nil, options: nil)![0] as? UIView
-    self.loadingView?.bounds = self.view.bounds
-
-    self.view.addSubview(self.loadingView!)
     self.view.addSubview(rootViewController.view)
+    self.view.addSubview(self.loadingView!)
 
     NSLayoutConstraint.activate([
       rootViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),

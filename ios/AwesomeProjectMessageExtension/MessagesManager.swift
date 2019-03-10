@@ -22,13 +22,13 @@ class MessagesManager: NSObject {
     self.messagesVC = messagesVC
   }
 
-  @objc func showLoadingScreen() {
+  @objc func showLoadingView() {
     DispatchQueue.main.async {
       self.messagesVC.loadingView?.isHidden = false
     }
   }
 
-  @objc func hideLoadingScreen() {
+  @objc func hideLoadingView() {
     DispatchQueue.main.async {
       self.messagesVC.loadingView?.isHidden = true
     }

@@ -18,6 +18,8 @@ const MessagesEvents = new NativeEventEmitter(MessagesEventEmitter);
 export default class App extends Component {
   state = {
     presentationStyle: '',
+    conversation: null,
+    message: null,
   }
 
   componentDidMount() {
@@ -27,11 +29,20 @@ export default class App extends Component {
     MessagesEvents
       .addListener('onPresentationStyleChanged', ({ presentationStyle }) => this.setState({ presentationStyle }));
 
+    MessagesManager
+      .getActiveConversation((conversation, message) => this.setState({ conversation, message }));
+
+    MessagesEvents
+      .addListener('didReceiveMessage', ({ message }) => this.setState({ message }));
+
+    MessagesEvents
+      .addListener('didSelectMessage', ({ message }) => this.setState({ message }));
+
     this.performFakeAsyncTaskAndHideLoadingView()
   }
 
   performFakeAsyncTaskAndHideLoadingView = () => {
-    setTimeout(() => MessagesManager.hideLoadingView(), 3000);
+    setTimeout(() => MessagesManager.hideLoadingView(), 1500);
   }
 
   onTogglePresentationStyle = () => {
@@ -48,9 +59,9 @@ export default class App extends Component {
         imageSubtitle: 'Image Subtitle',
       },
       summaryText: 'Sent a message from AwesomeMessageExtension',
-      url: ''
+      url: `?timestamp=${Date.now()}&sender=${this.state.conversation.localParticipiantIdentifier}`
     })
-    .then(message => console.log('Successfully composed a message: ', message))
+    .then(() => MessagesManager.updatePresentationStyle('compact'))
     .catch(error => console.log('An error occurred while composing the message: ', error))
   }
 
@@ -66,13 +77,11 @@ export default class App extends Component {
   }
 
   render() {
+    const { message } = this.state;
+
     return (
       <View>
         {__DEV__ && <DevMenu />}
-
-        <Text>
-          Welcome to React Native iMessage Extension!
-        </Text>
 
         <Button
           title="Toggle the Presentation Style"
@@ -94,6 +103,25 @@ export default class App extends Component {
           title="Show Loading View (hides after 3 seconds)"
           onPress={this.onShowLoadingView}
         />
+
+        {message && message.url && (
+          <View style={{
+            marginTop: 25,
+            alignItems: 'center',
+          }}>
+            <Text>
+              URL from the message:
+            </Text>
+
+            <Text style={{
+              fontWeight: 'bold',
+              paddingLeft: 24,
+              paddingRight: 24,
+            }}>
+              {message.url}
+            </Text>
+          </View>
+        )}
       </View>
     );
   }
